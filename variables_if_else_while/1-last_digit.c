@@ -1,11 +1,13 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
+
 /**
  * main - entry point
  * Description: if statements
  * Return: Success (0)
  */
+
 int main(void)
 {
 	int n;
@@ -17,7 +19,7 @@ int main(void)
 
 	if (last_d > 5)
 	{
-		printf("Last digit of %d is %d and is greter than 5\n", n, last_d);
+		printf("Last digit of %d is %d and is greater than 5\n", n, last_d);
 	}
 	else if (last_d == 0)
 	{
