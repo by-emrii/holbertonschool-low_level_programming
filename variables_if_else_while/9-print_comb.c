@@ -6,20 +6,18 @@
  */
 int main(void)
 {
-	int first, second;
+	int number = 0;
 
-	for (first = 0; first <= 8; first++)
+	while (number < 10)
 	{
-		for (second = first + 1; second <= 8; second++)
+		putchar(number + '0');
+		if (number < 9)
 		{
-			putchar(first + '0');
-			putchar(second + '0');
-			if (first != 8 || second != 9)
-			{
-				putchar(',');
-				putchar(' ');
-			}
+			putchar(',');
+			putchar(' ');
 		}
+		number++;
 	}
+	putchar('\n');
 	return (0);
 }
