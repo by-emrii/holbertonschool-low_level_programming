@@ -4,7 +4,7 @@
  * Return: void
  */
 void jack_bauer(void)
-{	
+{
 	int curr_hour = 0;
 	int curr_min = 0;
 
