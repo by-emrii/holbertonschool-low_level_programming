@@ -26,7 +26,7 @@ void times_table(void)
 			else
 			{
 				_putchar((result / 10) + 48);
-				_putchar((result % 2) + 48);
+				_putchar((result % 10) + 48);
 			}
 
 			if (digit2 < 9)
