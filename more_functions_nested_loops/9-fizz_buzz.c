@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * fizzbuzz - Prints numbers from 1 to 100 with FizzBuzz logic
+ * fizzbuzz - prints number from 1 to 100 with fizzbuzz
  * Return: void
  */
 void fizzbuzz(void)
