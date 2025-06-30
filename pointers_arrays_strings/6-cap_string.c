@@ -7,7 +7,7 @@
 char *cap_string(char *str)
 {
 	int count = 0;
-	int cap_next = 0;/*flag - 1 to cap letter, 0 to not*/
+	int cap_next = 1;/*flag - 1 to cap letter, 0 to not*/
 
 	while (str[count] != '\0')
 	{	/*check for separators*/
