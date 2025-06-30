@@ -8,7 +8,7 @@ int _atoi(char *s)
 {
 	int current_index = 0;
 	int sign = 1;
-	int number = 0;/*builds and stores the actual int value*/
+	unsigned int number = 0;/*builds and stores the actual int value*/
 	int number_started = 0; /*flag: becomes true (1) when it encounters digits*/
 
 	while (s[current_index] != '\0')
@@ -29,5 +29,8 @@ int _atoi(char *s)
 		}
 		current_index++;
 	}
-	return (number * sign);
+	if (sign == -1)
+		return (-number);
+
+	return (number);
 }
