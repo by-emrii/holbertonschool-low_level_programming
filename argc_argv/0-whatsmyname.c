@@ -8,7 +8,7 @@
  */
 int main(int argc, char *argv[])
 {
-	(void)argc; /*tell compiler argc not used to silence unused parameter warnings*/
+	(void)argc; /*tell compiler argc not used, silence unused parameter warnings*/
 	printf("%s\n", argv[0]);
 	return (0);
 }
