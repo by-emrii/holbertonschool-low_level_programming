@@ -2,7 +2,7 @@
 #include <stdlib.h>
 /**
  * free_dog - free the dog
- * d: dog struct
+ * @d: dog struct
  * Return: void
  */
 void free_dog(dog_t *d)
