@@ -1,6 +1,6 @@
 /*prototypes for my funcs and _putchar*/
-#ifndef function_pointers_h
-#define function_pointers_h
+#ifndef FUNCTION_POINTERS_H
+#define FUNCTION_POINTERS_H
 #include <stddef.h>
 
 int _putchar(char c);
