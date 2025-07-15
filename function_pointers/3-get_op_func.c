@@ -1,9 +1,10 @@
-#include "calc.h"
+#include "3-calc.h"
 #include <stdlib.h>
+#include <string.h>
 /**
- * get_op_func - function that selects the correct function to perform 
- * @s: ptr to char 
- * Return: void
+ * get_op_func - function that selects the correct function to perform
+ * @s: op passed as arg
+ * Return: pointer to correct func, NULL if not found
  */
 int (*get_op_func(char *s))(int, int)
 {
@@ -17,9 +18,9 @@ int (*get_op_func(char *s))(int, int)
 	};
 	int i = 0;
 
-	while (i < 5)
+	while (ops[i].op != NULL)
 	{
-		if (s[0] == ops[i].[0])
+		if (strcmp(s, ops[i].op) == 0)
 			return (ops[i].f);
 		i++;
 	}
