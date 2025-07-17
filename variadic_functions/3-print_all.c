@@ -76,6 +76,12 @@ void print_all(const char * const format, ...)
 		{'s', print_str}
 	};
 
+	if (format == NULL)
+	{
+		printf("\n");
+		return;
+	}
+
 	va_start(args, format); /* init va_list to process args */
 
 	while (format[i] != '\0')
