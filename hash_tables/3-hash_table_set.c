@@ -5,7 +5,7 @@
 
 /**
  * hash_table_set - adds element to the hash table
- * @ht: the hash table you want to add/update to 
+ * @ht: the hash table you want to add/update to
  * @key: the key. cannot be empty string
  * @value: value assoc with the key, must be dup, can be empty str
  * Return: 1 if succeeded, 0 if fail
@@ -14,15 +14,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
 	hash_node_t *node;
-	
-	/* if node does not exist, create node, for later*/
-        hash_node_t *new_node = malloc(sizeof(hash_node_t));
-        if (!new_node)
-                return (0);
 
 	if (!ht || !key || !value)
 		return (0);
-	
+
 	/* turn key into index using func*/
 	index = key_index((const unsigned char *)key, ht->size);
 	node = ht->array[index]; /*looks inside ht for node*/
@@ -38,6 +33,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 		node = node->next; /* keep searching */
 	}
+
+	/* if node does not exist, create node */
+	hash_node_t *new_node = malloc(sizeof(hash_node_t));
+
+	if (!new_node)
+		return (0);
 
 	new_node->key = strdup(key);
 	new_node->value = strdup(value);
