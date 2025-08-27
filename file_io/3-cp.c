@@ -22,8 +22,7 @@ int main(int argc, char *argv[])
 	check_args(argc);
 	fd_from = open_source(argv[1]);
 	fd_to = open_dest(argv[2]);
-	
-	
+
 	/* read from source and write to dest in 1024 bytes */
 	while ((bytes_read = read(fd_from, buf, 1024)) > 0)
 	{
