@@ -14,8 +14,7 @@
 int main(int argc, char *argv[])
 {
 	int fd_from, fd_to;
-	char *file_from;
-	char *file_to;
+	char *file_from, *file_to;
 	char buf[1024];
 	ssize_t bytes_read, bytes_written;
 
@@ -35,17 +34,18 @@ int main(int argc, char *argv[])
 	if (fd_to == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to), exit(99);
 	/* read from source and write to dest in 1024 bytes */
-	while ((bytes_read = read(fd_from, buf, 1024)) > 0)
+	bytes_read = read(fd_from, buf, 1024);
+	while (bytes_read > 0)
 	{
 		bytes_written = write(fd_to, buf, bytes_read);
 		if (bytes_written != bytes_read || bytes_written == -1)
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to), exit(99);
-	}
-	/* check read error */
-	if (bytes_read == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-		exit(98);
+		bytes_read = read(fd_from, buf, 1024);
+		if (bytes_read == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
+			exit(98);
+		}
 	}
 	/* close file */
 	if (close(fd_from) == -1)
