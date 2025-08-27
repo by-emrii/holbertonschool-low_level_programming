@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 	while ((bytes_read = read(fd_from, buf, 1024)) > 0)
 	{
 		bytes_written = write(fd_to, buf, bytes_read);
-		if (bytes_written != bytes_read || bytes_written == -1)
+		if (bytes_written != bytes_read)
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to), exit(99);
 	}
 	/* check read error */
