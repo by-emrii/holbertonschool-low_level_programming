@@ -16,11 +16,15 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	char buf[1024];
+	char *buf;
 	int fd;
 	ssize_t bytes;
 
 	if (filename == NULL)
+		return (0);
+
+	buf = malloc(letters);
+	if (buf == NULL)
 		return (0);
 
 	/* open file in read only */
